@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "source_label": "Privater stakeholder-intelligence-agent Arbeitsstand; kein Release-Nachweis",
+  "fingerprint_algorithm": "SHA-256",
+  "source_paths_relative_to": "private repository root",
+  "sources": [
+    {
+      "path": "Code/package.json",
+      "sha256": "4f7b3c7b3169d3bd22ad3200e70e6a8f1a2d263626d74b384fa85b24ce68f497"
+    },
+    {
+      "path": "Code/app/page.tsx",
+      "sha256": "f55916b8aaef96a62a9f8099463228c98834114165c32c72340cf75735646101"
+    },
+    {
+      "path": "Code/components/Board.tsx",
+      "sha256": "1c54d506a9699be5a45d4844aa47196096c27ae96d1582cdb05fc44202106c44"
+    },
+    {
+      "path": "Code/components/StakeholderPanel.tsx",
+      "sha256": "61de77b4ab1041a15c6c3318f9a91a2822be2e679557e349d9d2643dbf2bb0ee"
+    },
+    {
+      "path": "Code/components/MarkdownBody.tsx",
+      "sha256": "c3d45bcc69cd19ccf24208b7c716388a7411d6a30cf8f5a26bb299025e62845a"
+    },
+    {
+      "path": "Code/lib/db.ts",
+      "sha256": "e37f0820fa845c173acad8697996977d3be7a10224f6346c140e5254d7c078ae"
+    },
+    {
+      "path": "Code/lib/apiClient.ts",
+      "sha256": "984644b9076661d7fe3f0cb1849db6ea118c3c6f2ca41eb18969fd7e78490634"
+    },
+    {
+      "path": "Code/lib/repositories/engagements.ts",
+      "sha256": "a9903c4af3ac482fd5898a31f9a40bd6c387539e3032adf0ecb39987c634ef8b"
+    },
+    {
+      "path": "Code/lib/repositories/stakeholders.ts",
+      "sha256": "6b5854ff927ae1c98c31277fb4a3b4db9754dffdc86a2bad141f29c2c194038f"
+    },
+    {
+      "path": "Code/lib/repositories/boardConfig.ts",
+      "sha256": "becd6589b16be41910b5ba2f4879ee913930de5bbc20456a903d5e726cbff17c"
+    },
+    {
+      "path": "Code/lib/ollama.ts",
+      "sha256": "ff3c8171be1760969c95b5417d3f76fcc4ea840b00fca4b5f79e274b359bb0c0"
+    },
+    {
+      "path": "Code/lib/suggestions.ts",
+      "sha256": "5126d9ec29746c0b58121611b3ec626c61bd14f543d595dd0416094b5b006b34"
+    },
+    {
+      "path": "Code/lib/suggestionPrompt.ts",
+      "sha256": "9e5a7ff39824baa923f943ee38e4f5eaa8dc2d4b751d3954e9ba9d3fbeda5109"
+    },
+    {
+      "path": "Code/lib/discStrategy.ts",
+      "sha256": "803f92d34418d2dabba8a2491a7da26181e0b720ba049b4e11d3512236458ed5"
+    },
+    {
+      "path": "Code/lib/geometry.ts",
+      "sha256": "1135b0bbe0617c3d0fdcf18b1d37f13b37172e6c04baae4e83d4a09e841f77a1"
+    },
+    {
+      "path": "Product-brief.md",
+      "sha256": "ac7911e1264156040e772845e4fe0386d88d0a2591c198e32456ed4c18d67f50"
+    }
+  ],
+  "excerpts": [
+    {
+      "source_path": "Code/lib/geometry.ts",
+      "showcase_path": "components/geometry.ts",
+      "sha256": "1135b0bbe0617c3d0fdcf18b1d37f13b37172e6c04baae4e83d4a09e841f77a1",
+      "unchanged": true
+    }
+  ],
+  "exclusions": [
+    "Private Git-Historie",
+    "Personenbezogene Daten und Datenbanken",
+    "Betriebs- und Agentenkonfiguration",
+    "Kontext- und Übergabedokumente als Volltext",
+    "Screenshots ohne geprüfte synthetische Herkunft"
+  ]
+}
