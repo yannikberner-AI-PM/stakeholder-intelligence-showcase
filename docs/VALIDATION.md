@@ -5,7 +5,7 @@
 - `npm test`: zwölf separate Node-Tests für den unveränderten Geometrieauszug und anschließender Standardbibliothek-Validator.
 - `python3 scripts/validate.py --source-root ../stakeholder-intelligence-agent`: Quellfingerprints und Bytegleichheit des Auszugs zusätzlich zum normalen Showcase-Gate.
 - `git diff --check`: Whitespace-Kontrolle; bei noch unversionierten Dateien zusätzlich die Dateiprüfung des Validators beachten.
-- Git-Zustand geprüft: Branch `docs/initial-showcase`, kein Commit, kein Remote; alle kuratierten Dateien bleiben unstaged.
+- Screenshot-Erweiterung auf `feat/product-screenshots`, ausgehend vom bestehenden öffentlichen `main`. Drei geprüfte synthetische Produktbilder; [Build und Browserprüfung](SCREENSHOTS.md).
 
 Diese Einordnung wird beim lokalen Aufbau mit realen Befehlen geprüft. Es werden keine Produkt- oder Modelltestergebnisse aus früheren Sessions übernommen.
 
@@ -23,6 +23,6 @@ Der optionale Originalabgleich benötigt private Quellen. Der normale Test läuf
 
 ## Nicht ausgeführt / nicht beansprucht
 
-Kein Build und kein vollständiger Vitest-Lauf des privaten Produkts, kein Browser-/Drag-and-drop-Test, keine Datenbankmigration an Nutzerdaten, kein Ollama-Aufruf, keine Modellqualitätsevaluation, keine Vulnerability-Datenbankabfrage und kein Penetrationstest. Der Showcase enthält keine vollständige Anwendung und benötigt solche Ergebnisse nicht für die isolierte Auszugsprüfung. Produktfreigaben dürfen daraus nicht abgeleitet werden.
+Die isolierte Anwendungskopie wurde erfolgreich gebaut und mit 128 Vitest-Tests geprüft. Ein begrenzter Browserlauf prüfte Board, Detailnotizen, echte Regelvorschau und bestätigtes Anhängen. Kein Drag-and-drop-Test, keine Migration an Nutzerdaten, kein erfolgreicher Ollama-Modelllauf, keine Modellqualitätsevaluation, keine Vulnerability-Datenbankabfrage und kein Penetrationstest. Produktfreigaben dürfen daraus nicht abgeleitet werden.
 
-Die öffentliche Sicherheit des Dateisatzes beruht auf einer assistentengestützten Auswahl und Durchsicht plus heuristischen Checks, nicht auf einer unabhängigen Datenschutzprüfung oder bereits erteilter Eigentümerfreigabe.
+Die öffentliche Sicherheit des Dateisatzes beruht auf einer assistentengestützten Auswahl und Durchsicht plus heuristischen Checks, nicht auf einer unabhängigen Datenschutzprüfung oder unabhängiger Eigentümerprüfung.

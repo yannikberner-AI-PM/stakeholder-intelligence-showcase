@@ -7,7 +7,7 @@ Der betrachtete Arbeitsstand enthält lokale Änderungen in Kontext-/Anweisungsd
 | Aussage | Quellen relativ zum privaten Repository | Evidenzart / Grenze |
 | --- | --- | --- |
 | Next.js, React, TypeScript, SQLite, Vitest | `Code/package.json`, `Code/app/page.tsx` | Paketdefinition und Einstieg, keine aktuelle Abhängigkeitsprüfung. |
-| Kreis/Matrix, Post-its, Beschriftung und Auftragswechsel | `Code/components/Board.tsx`, `Code/lib/repositories/boardConfig.ts` | Implementierter UI-/Persistenzpfad, kein neuer Browserlauf. |
+| Kreis/Matrix, Post-its, Beschriftung und Auftragswechsel | `Code/components/Board.tsx`, `Code/lib/repositories/boardConfig.ts` | Implementierter UI-/Persistenzpfad; Kreis und Detailansicht zusätzlich im synthetischen Browserlauf aufgenommen. |
 | Gemeinsame Stammdaten; duplizierte Auftragszuordnungen und Soft-Archiv | `Code/lib/db.ts`, `Code/lib/repositories/engagements.ts`, `Code/lib/repositories/stakeholders.ts` | Schema und Repository-Logik, keine hier ausgeführten Datenbankmigrationen. |
 | Notizen, manuelles DISC, Vorschau und Übernahme als Anhang | `Code/components/StakeholderPanel.tsx`, `Code/lib/apiClient.ts`, `Code/lib/discStrategy.ts` | Implementierte Handlungen, keine UX-Wirkungsmessung. |
 | Ollama, Defaults und konfigurierbares Übertragungsziel | `Code/lib/ollama.ts` | Transportcode; kein installierter Modellstand oder garantiert lokaler Betrieb. |
@@ -21,7 +21,7 @@ Der betrachtete Arbeitsstand enthält lokale Änderungen in Kontext-/Anweisungsd
 
 Nur `Code/lib/geometry.ts` wurde als Originalcode übernommen. Die übrigen Quellen werden durch Pfade und Hashes referenziert, nicht als Volltext veröffentlicht. Die deutsche Dokumentation und die Tests sind für dieses Showcase neu formuliert. Weder Hardware-/Sessionnotizen noch operative Dateien oder reale Daten wurden übernommen. Die Testeingaben sind rein synthetische Koordinaten und ungültige Eingabewerte; keine Personenbeispiele.
 
-Es sind keine Screenshots enthalten. Im betrachteten Quellcodebaum lagen außerhalb generierter Abhängigkeiten und Build-Verzeichnisse keine Produktbilder vor; insbesondere wurde die private Datenbank für keine Aufnahme geöffnet.
+Drei echte Produktaufnahmen wurden nachträglich mit eigens angelegten synthetischen Daten in einer isolierten Anwendungskopie erstellt. Die private Datenbank wurde nicht geöffnet oder kopiert. [Aufbau, Quellstand und Prüfgrenzen](SCREENSHOTS.md).
 
 ## Reproduzierbarkeit
 

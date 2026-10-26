@@ -6,6 +6,8 @@ import json
 from pathlib import Path, PurePosixPath
 import re
 import sys
+import struct
+import zlib
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,6 +17,10 @@ EXPECTED = {
     'docs/ARCHITECTURE.md', 'docs/PROVENANCE.md', 'docs/ROADMAP.md',
     'docs/SECURITY.md', 'docs/VALIDATION.md', 'package.json',
     'provenance.json', 'scripts/validate.py', 'tests/geometry.test.mjs',
+    'docs/SCREENSHOTS.md',
+    'assets/screenshots/board-relationships.png',
+    'assets/screenshots/detail-notes.png',
+    'assets/screenshots/collaboration-suggestion.png',
 }
 PATTERNS = {
     'machine-local home path': re.compile(r'/(?:Us' + r'ers|ho' + r'me)/[^\s/]+/'),
@@ -51,6 +57,29 @@ def validate(source_root=None):
     for name in sorted(actual & EXPECTED):
         path = ROOT / name
         if path.is_symlink():
+            continue
+        if path.suffix == '.png':
+            data = path.read_bytes()
+            if not data.startswith(b'\x89PNG\r\n\x1a\n'):
+                errors.append(f'{name}: invalid PNG signature')
+                continue
+            offset, chunks = 8, []
+            while offset + 12 <= len(data):
+                length = struct.unpack('>I', data[offset:offset + 4])[0]
+                kind = data[offset + 4:offset + 8]
+                payload = data[offset + 8:offset + 8 + length]
+                end = offset + 12 + length
+                if end > len(data) or zlib.crc32(kind + payload) != struct.unpack('>I', data[end - 4:end])[0]:
+                    errors.append(f'{name}: invalid PNG chunk')
+                    break
+                chunks.append(kind)
+                if kind not in (b'IHDR', b'IDAT', b'IEND', b'sRGB'):
+                    errors.append(f'{name}: unreviewed PNG metadata')
+                if kind == b'IHDR' and struct.unpack('>II', payload[:8]) != (1600, 1100):
+                    errors.append(f'{name}: unexpected dimensions')
+                offset = end
+            if not chunks or chunks[0] != b'IHDR' or chunks[-1] != b'IEND' or b'IDAT' not in chunks or offset != len(data):
+                errors.append(f'{name}: incomplete PNG')
             continue
         text = path.read_text(encoding='utf-8')
         for label, pattern in PATTERNS.items():
@@ -110,6 +139,17 @@ def validate(source_root=None):
         fingerprint = digest(ROOT / name)
         if excerpt.get('unchanged') is not True or fingerprint != excerpt['sha256'] or fingerprint != sources.get(excerpt['source_path']):
             errors.append('excerpt provenance mismatch')
+    screenshots = provenance.get('screenshots', {})
+    images = {name for name in EXPECTED if name.endswith('.png')}
+    records = screenshots.get('files', [])
+    if len(records) != 3 or {item.get('path') for item in records} != images:
+        errors.append('screenshot provenance inventory mismatch')
+    if screenshots.get('classification') != 'synthetic' or screenshots.get('suggestion_source') != 'rules' or screenshots.get('source_code_unchanged') is not True:
+        errors.append('invalid screenshot evidence classification')
+    for item in records:
+        name = item.get('path')
+        if name not in images or digest(ROOT / name) != item.get('sha256') or (item.get('width'), item.get('height')) != (1600, 1100):
+            errors.append('screenshot fingerprint/dimensions mismatch')
     package = json.loads((ROOT / 'package.json').read_text())
     if package.get('private') is not True or package.get('license') != 'UNLICENSED':
         errors.append('package publication/license gate missing')

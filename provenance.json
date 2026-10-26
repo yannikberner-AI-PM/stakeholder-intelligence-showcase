@@ -83,5 +83,35 @@
     "Betriebs- und Agentenkonfiguration",
     "Kontext- und Übergabedokumente als Volltext",
     "Screenshots ohne geprüfte synthetische Herkunft"
-  ]
+  ],
+  "screenshots": {
+    "classification": "synthetic",
+    "source_commit": "30496be208ce770d20c3f895b47bc93cb21c4fad",
+    "source_code_unchanged": true,
+    "source_input_sha256": "abdd6b9557b4f478e64f91910266c3e090d8ea6a208b394cc43eefe186f05d80",
+    "next_build_id": "H1fFUUefeWpfPzycQ2z9G",
+    "runtime": "Next.js 14.2.15 production build, loopback only",
+    "browser": "Isolated Playwright Chromium, fresh nonpersistent context, 1600x1100",
+    "suggestion_source": "rules",
+    "files": [
+      {
+        "path": "assets/screenshots/board-relationships.png",
+        "sha256": "4d06b8797654899c3b587efd98e74fd6ee4dea5aab4704cda68839d7b7e35839",
+        "width": 1600,
+        "height": 1100
+      },
+      {
+        "path": "assets/screenshots/detail-notes.png",
+        "sha256": "4084d73eb3ce39906c8341504d7642b18128f8cb5c471e345d533242f32c7b27",
+        "width": 1600,
+        "height": 1100
+      },
+      {
+        "path": "assets/screenshots/collaboration-suggestion.png",
+        "sha256": "ab062d0682c4f02d3c267f7f2b8ee31afa763ff24a1154840d833fdf44136133",
+        "width": 1600,
+        "height": 1100
+      }
+    ]
+  }
 }

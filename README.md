@@ -1,10 +1,10 @@
-# Stakeholder Intelligence — Showcase
+# Stakeholder Intelligence: Showcase
 
 **Beziehungen sichtbar machen. Die eigene Zusammenarbeit bewusster gestalten.**
 
 Stakeholder Intelligence ist ein privater, lokal-first entwickelter Prototyp zur visuellen Einordnung von Stakeholdern und zur Vorbereitung der eigenen Kommunikation. Kreis-Modell und Matrix machen Nähe und selbst gewählte Kategorien sichtbar; strukturierte Notizen halten Beobachtungen, Kontext und Follow-ups zusammen.
 
-Es geht um die Anpassung des eigenen Verhaltens — nicht darum, Menschen zu „durchschauen“, zu bewerten oder zu manipulieren. DISC-Einordnungen sind manuell gesetzte Arbeitshypothesen, keine diagnostisch validierten Persönlichkeitsbefunde.
+Es geht um die Anpassung des eigenen Verhaltens: nicht darum, Menschen zu „durchschauen“, zu bewerten oder zu manipulieren. DISC-Einordnungen sind manuell gesetzte Arbeitshypothesen, keine diagnostisch validierten Persönlichkeitsbefunde.
 
 ## Für wen und wofür?
 
@@ -25,6 +25,26 @@ Dieses Repository ist eine **kuratierte technische Ansicht**, nicht die vollstä
 | Noch nicht umgesetzt | Mail-/Slack-/Teams-/Kalender-Connectoren, Reminder und eine Kanban-/Analyseansicht. Siehe [Roadmap und Grenzen](docs/ROADMAP.md). |
 
 **Nicht behauptet:** automatische Persönlichkeitsanalyse, autonome Kontaktaufnahme, automatische Gesprächsplanung, Team-/Mandantenisolation, DSGVO-Konformitätsnachweis, Produktivfreigabe oder gemessene Kommunikationsverbesserung. „Lokal-first“ ist keine technisch erzwungene Zusage, dass niemals Daten das Gerät verlassen: der Modell-Endpunkt ist konfigurierbar. [Sicherheitsmodell](docs/SECURITY.md).
+
+## Produkt in drei Ansichten
+
+### Beziehungen im Blick behalten
+
+![Kreis-Modell mit vier synthetischen Demo-Stakeholdern](assets/screenshots/board-relationships.png)
+
+Das Kreis-Modell zeigt selbst gewählte Nähe im fiktiven Projekt Morgenlicht. Die Positionen sind manuelle Einordnungen, keine automatisch erkannten Beziehungen.
+
+### Gespräche mit Kontext vorbereiten
+
+![Detailansicht mit synthetischen Beobachtungen und Follow-ups](assets/screenshots/detail-notes.png)
+
+Beobachtungen, eigene Kommunikation, Rollen und offene Punkte bleiben neben dem Board zugänglich. Alle sichtbaren Inhalte sind synthetisch.
+
+### Vorschläge bewusst prüfen
+
+![Vorschau eines echten Regel-Fallbacks mit Übernehmen und Verwerfen](assets/screenshots/collaboration-suggestion.png)
+
+Die laufende Anwendung erzeugt hier einen **Regel-Fallback**, keinen LLM-Text. Vorschau und explizites Übernehmen bleiben getrennt. Aufnahme, Build und Prüfgrenzen: [Screenshot-Nachweis](docs/SCREENSHOTS.md).
 
 ## Technik und prüfbarer Originalauszug
 
@@ -51,7 +71,7 @@ Der optionale Abgleich liest ausschließlich die im Herkunftsmanifest benannten 
 ## Kuratierung und Rechte
 
 - [Belegmatrix und Herkunft](docs/PROVENANCE.md), einschließlich relativer Quellpfade und SHA-256-Fingerprints in [provenance.json](provenance.json).
-- Keine Screenshots: Es lagen keine freigegebenen synthetischen Produktbilder vor; reale Daten und nachgestellte UI-Mockups werden nicht als Produktbeleg veröffentlicht.
+- Drei echte Produktaufnahmen mit ausschließlich synthetischen Demo-Daten. Keine Mockups. [Aufnahme und Herkunft](docs/SCREENSHOTS.md).
 - Keine private Git-Historie, Datenbanken, Betriebs- oder Agentenkonfiguration; keine übernommenen Kontext- und Übergabedokumente.
 - [LICENSE](LICENSE): proprietär, zur Ansicht und technischen Bewertung, keine Open-Source-Freigabe.
 - [MANIFEST.sha256](MANIFEST.sha256): Integrität des kuratierten Dateisatzes, ohne sich selbst zu hashen.
